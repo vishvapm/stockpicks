@@ -1,232 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finance Flow — Stock Picks</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="stock-picks-additions.css" />
+<base target="_blank">
 </head>
+<body class="stock-picks-page">
 
-<body>
-
+  <!-- NAVBAR -->
   <nav class="navbar">
     <a href="index.html" class="nav-logo">Finance<span>Flow</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="invest.html">Invest</a>
-      <a href="https://sites.google.com/view/weeklystockpicks/home" target="_blank">Stock Picks</a>
-      <a href="earnings.html">Quarterly Earnings</a>
-    </div>
-    <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
-  </nav>
 
-  <main class="site-main">
-
-    <div class="page-hero">
-      <span class="slbl">Analyst Selections</span>
-      <h1>This Week's <em>Stock Picks</em></h1>
-      <p>Full analyst thesis, entry ranges, price targets, and conviction scores. Updated weekly by our research desk.
-      </p>
-    </div>
-
-    <!-- FEATURED PICK -->
-    <div class="featured-pick">
-      <div class="fp-eyebrow">⭐ Pick of the Week</div>
-      <div class="fp-body">
-        <div>
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
-            <span class="fp-ticker">NVDA</span>
-            <div>
-              <div class="fp-name">NVIDIA Corporation</div>
-              <div class="fp-meta">Semiconductors · Technology · Q4 FY2026 Beat</div>
-            </div>
-          </div>
-          <div class="fp-tags">
-            <span class="tag tg">Strong Buy</span>
-            <span class="tag tt">AI Infrastructure</span>
-          </div>
-          <p class="fp-thesis">NVIDIA's dominance in AI accelerator chips is unmatched. With Blackwell architecture
-            ramping ahead of schedule and data center revenues growing 200%+ YoY, the company is positioned as the
-            infrastructure layer of the AI decade. Supply constraints are easing into H2, opening significant margin
-            expansion potential.</p>
-          <div class="fp-levels">
-            <div class="fp-lvl"><span>Entry Zone</span><strong>$820 – $860</strong></div>
-            <div class="fp-lvl"><span>Price Target</span><strong>$1,100</strong></div>
-            <div class="fp-lvl"><span>Stop Loss</span><strong>$760</strong></div>
-            <div class="fp-lvl"><span>Upside</span><strong class="green">+31%</strong></div>
-          </div>
+    <div class="nav-links" id="nav-links">
+      <!-- Home Dropdown -->
+      <div class="nav-dropdown" data-dropdown="home">
+        <a href="index.html" class="nav-drop-trigger">
+          Home
+          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="index.html">Finance Flow Home</a>
         </div>
-        <div>
-          <div class="fp-chart-card">
-            <svg viewBox="0 0 240 80" style="width:100%;height:80px;display:block;">
-              <defs>
-                <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#38C698" stop-opacity=".18" />
-                  <stop offset="100%" stop-color="#38C698" stop-opacity="0" />
-                </linearGradient>
-              </defs>
-              <path d="M0,74 L28,62 L56,54 L84,40 L104,47 L132,27 L160,19 L188,11 L216,7 L240,2" fill="none"
-                stroke="#38C698" stroke-width="2" />
-              <path d="M0,74 L28,62 L56,54 L84,40 L104,47 L132,27 L160,19 L188,11 L216,7 L240,2 L240,80 L0,80Z"
-                fill="url(#g2)" />
-            </svg>
-            <div class="fp-chart-tag">+127% YTD</div>
-          </div>
-          <div class="fp-stat-grid">
-            <div class="fp-stat"><span>P/E Ratio</span><strong>52.4x</strong></div>
-            <div class="fp-stat"><span>Rev Growth</span><strong>+206%</strong></div>
-            <div class="fp-stat"><span>Gross Margin</span><strong>73.8%</strong></div>
-            <div class="fp-stat"><span>Market Cap</span><strong>$2.1T</strong></div>
-          </div>
+      </div>
+
+      <!-- 2026 Dropdown -->
+      <div class="nav-dropdown" data-dropdown="2026">
+        <a href="#" class="nav-drop-trigger" onclick="event.preventDefault()">
+          2026
+          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="https://sites.google.com/view/weeklystockpicks/home" target="_blank">All 2026 Picks</a>
+          <a href="#">January 2026</a>
+          <a href="#">February 2026</a>
+          <a href="#">March 2026</a>
+          <a href="#">April 2026</a>
+          <a href="#">May 2026</a>
+          <a href="#">June 2026</a>
+        </div>
+      </div>
+
+      <!-- 2025 Dropdown -->
+      <div class="nav-dropdown" data-dropdown="2025">
+        <a href="#" class="nav-drop-trigger" onclick="event.preventDefault()">
+          2025
+          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="https://sites.google.com/view/weeklystockpicks/home" target="_blank">All 2025 Picks</a>
+          <a href="#">Q1 2025</a>
+          <a href="#">Q2 2025</a>
+          <a href="#">Q3 2025</a>
+          <a href="#">Q4 2025</a>
+        </div>
+      </div>
+
+      <!-- 2024 Dropdown -->
+      <div class="nav-dropdown" data-dropdown="2024">
+        <a href="#" class="nav-drop-trigger" onclick="event.preventDefault()">
+          2024
+          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="https://sites.google.com/view/weeklystockpicks/home" target="_blank">All 2024 Picks</a>
+          <a href="#">Q1 2024</a>
+          <a href="#">Q2 2024</a>
+          <a href="#">Q3 2024</a>
+          <a href="#">Q4 2024</a>
         </div>
       </div>
     </div>
 
-    <!-- FILTER + TABLE -->
-    <div class="filter-bar">
-      <span class="filter-lbl">Filter by</span>
-      <button class="fb active" data-filter="all">All Picks</button>
-      <button class="fb" data-filter="tech">Technology</button>
-      <button class="fb" data-filter="finance">Finance</button>
-      <button class="fb" data-filter="health">Healthcare</button>
-      <button class="fb" data-filter="energy">Energy</button>
-    </div>
+    <!-- Search Icon -->
+    <button class="nav-search" id="nav-search" aria-label="Search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+    </button>
 
-    <div class="table-wrap">
-      <div class="table-title">Active Recommendations</div>
-      <table class="pt" id="stocks-table">
-        <thead>
-          <tr>
-            <th>Ticker</th>
-            <th>Company</th>
-            <th>Sector</th>
-            <th>Rating</th>
-            <th>Entry</th>
-            <th>Target</th>
-            <th>Upside</th>
-            <th>Conviction</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr data-cat="tech">
-            <td class="pt-tk">NVDA</td>
-            <td class="pt-co">NVIDIA Corp.</td>
-            <td class="pt-co">Technology</td>
-            <td><span class="tag tg">Strong Buy</span></td>
-            <td>$840</td>
-            <td>$1,100</td>
-            <td class="up-val">+31%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:84%"></div>
-              </div>
-            </td>
-          </tr>
-          <tr data-cat="tech">
-            <td class="pt-tk">MSFT</td>
-            <td class="pt-co">Microsoft Corp.</td>
-            <td class="pt-co">Technology</td>
-            <td><span class="tag tg">Buy</span></td>
-            <td>$415</td>
-            <td>$485</td>
-            <td class="up-val">+17%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:76%"></div>
-              </div>
-            </td>
-          </tr>
-          <tr data-cat="tech">
-            <td class="pt-tk">META</td>
-            <td class="pt-co">Meta Platforms</td>
-            <td class="pt-co">Technology</td>
-            <td><span class="tag tf">Accumulate</span></td>
-            <td>$560</td>
-            <td>$620</td>
-            <td class="up-val">+11%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:68%"></div>
-              </div>
-            </td>
-          </tr>
-          <tr data-cat="finance">
-            <td class="pt-tk">JPM</td>
-            <td class="pt-co">JPMorgan Chase</td>
-            <td class="pt-co">Finance</td>
-            <td><span class="tag tg">Buy</span></td>
-            <td>$195</td>
-            <td>$230</td>
-            <td class="up-val">+18%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:72%"></div>
-              </div>
-            </td>
-          </tr>
-          <tr data-cat="health">
-            <td class="pt-tk">LLY</td>
-            <td class="pt-co">Eli Lilly &amp; Co.</td>
-            <td class="pt-co">Healthcare</td>
-            <td><span class="tag tg">Strong Buy</span></td>
-            <td>$750</td>
-            <td>$920</td>
-            <td class="up-val">+23%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:80%"></div>
-              </div>
-            </td>
-          </tr>
-          <tr data-cat="energy">
-            <td class="pt-tk">XOM</td>
-            <td class="pt-co">ExxonMobil</td>
-            <td class="pt-co">Energy</td>
-            <td><span class="tag tf">Hold</span></td>
-            <td>$118</td>
-            <td>$130</td>
-            <td class="up-val">+10%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:55%"></div>
-              </div>
-            </td>
-          </tr>
-          <tr data-cat="tech">
-            <td class="pt-tk">AAPL</td>
-            <td class="pt-co">Apple Inc.</td>
-            <td class="pt-co">Technology</td>
-            <td><span class="tag tf">Accumulate</span></td>
-            <td>$178</td>
-            <td>$210</td>
-            <td class="up-val">+18%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:70%"></div>
-              </div>
-            </td>
-          </tr>
-          <tr data-cat="finance">
-            <td class="pt-tk">V</td>
-            <td class="pt-co">Visa Inc.</td>
-            <td class="pt-co">Finance</td>
-            <td><span class="tag tg">Buy</span></td>
-            <td>$270</td>
-            <td>$310</td>
-            <td class="up-val">+15%</td>
-            <td>
-              <div class="cbar">
-                <div style="width:74%"></div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+  </nav>
 
+  <!-- SCROLLING ANNOUNCEMENT BANNER -->
+  <div class="announcement-banner stock-picks-banner">
+    <div class="banner-content">
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+      <span class="banner-text">Important Announcement: All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</span>
+    </div>
+  </div>
+
+  <!-- HERO SECTION WITH TREEMAP BACKGROUND -->
+  <section class="stock-picks-hero">
+    <img src="stock-treemap.png" alt="Stock Market Treemap" class="stock-picks-hero-bg" />
+    <div class="stock-picks-hero-overlay"></div>
+    <div class="stock-picks-hero-content">
+      <h1>STOCK PICKS</h1>
+      <p class="author">BY: Vishva Mariadassou</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="site-main">
+    <div class="stock-picks-content">
+
+      <div class="sp-announcement">
+        <p><strong>Important Announcement:</strong> All Growth Fund is now launched. Click <a href="invest.html">here</a> to invest for as little as $5.</p>
+      </div>
+
+      <div class="sp-contact">
+        <p>If you have any questions regarding the fund or my stock picks, feel free to reach out at <a href="mailto:vishvamariadassou@gmail.com">vishvamariadassou@gmail.com</a></p>
+      </div>
+
+      <div class="sp-welcome">
+        <p>Welcome to Stock Picks, your dedicated portal for navigating the dynamic world of stock investments. Here you'll find direct links to my carefully curated weekly stock picks, designed to provide actionable insights and opportunities to enhance your investment portfolio.</p>
+        <p>My goal is to equip you with the latest market trends, expert analysis, and strategic recommendations to help you make informed investment decisions. Each week, we delve into the intricacies of the stock market, identifying promising stocks that align with various investment strategies — whether you're seeking growth, value, or income.</p>
+      </div>
+
+      <div class="sp-disclaimer">
+        <p><em>Disclaimer: My stock picks are based on analysis that I do every week, but I use AI to edit the prose and style.</em> Here is a link to my original analysis: <a href="#">oldest</a>, <a href="#">newer</a>, <a href="#">even newer</a>, <a href="#">newest</a></p>
+      </div>
+
+    </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="ft-top">
       <div class="ft-brand">
@@ -238,10 +153,9 @@
           <h4>Navigate</h4>
           <a href="index.html">Home</a>
           <a href="invest.html">Invest</a>
-          <a href="https://sites.google.com/view/weeklystockpicks/home" target="_blank">Stock Picks</a>
+          <a href="stocks.html">Stock Picks</a>
           <a href="earnings.html">Quarterly Earnings</a>
         </div>
-
       </div>
     </div>
     <div class="ft-bot">
@@ -250,6 +164,73 @@
   </footer>
 
   <script src="main.js"></script>
-</body>
+  <script>
+    /* Stock Picks Page — Dropdown & Search Logic */
+    (function() {
+      const dropdowns = document.querySelectorAll('.nav-dropdown');
+      const searchBtn = document.getElementById('nav-search');
+      const ham = document.getElementById('ham');
+      const navLinks = document.getElementById('nav-links');
 
+      // Toggle dropdowns
+      dropdowns.forEach(dd => {
+        const trigger = dd.querySelector('.nav-drop-trigger');
+        if (!trigger) return;
+
+        trigger.addEventListener('click', (e) => {
+          // If it's a real link (Home), let it navigate unless dropdown is being opened
+          const isHome = dd.dataset.dropdown === 'home';
+          const menu = dd.querySelector('.dropdown-menu');
+
+          // On mobile, always toggle; on desktop, toggle if menu exists
+          if (window.innerWidth <= 600) {
+            e.preventDefault();
+            dd.classList.toggle('active');
+            // Close other dropdowns
+            dropdowns.forEach(other => {
+              if (other !== dd) other.classList.remove('active');
+            });
+            return;
+          }
+
+          // Desktop: if menu has multiple items, toggle; if single item, navigate
+          if (menu && menu.children.length > 1) {
+            e.preventDefault();
+            dd.classList.toggle('active');
+            dropdowns.forEach(other => {
+              if (other !== dd) other.classList.remove('active');
+            });
+          }
+          // else: follow the link naturally
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+          dropdowns.forEach(dd => dd.classList.remove('active'));
+        }
+      });
+
+      // Search icon click
+      if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+          const term = prompt('Search stock picks:');
+          if (term && term.trim()) {
+            alert('Search functionality coming soon for: "' + term.trim() + '"');
+          }
+        });
+      }
+
+      // Close mobile menu when clicking a dropdown link
+      document.querySelectorAll('.dropdown-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks) navLinks.classList.remove('active');
+          if (ham) ham.classList.remove('active');
+          dropdowns.forEach(dd => dd.classList.remove('active'));
+        });
+      });
+    })();
+  </script>
+</body>
 </html>
