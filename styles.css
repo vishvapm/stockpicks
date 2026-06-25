@@ -3254,3 +3254,393 @@ main.site-main section.hero div.hero-main h1.hero-h1 {
     justify-content: center;
   }
 }
+
+/* ================================================
+   STOCK PICKS PAGE ADDITIONS
+   Merge with your existing styles.css or link separately
+   ================================================ */
+
+/* ════════════════════════════
+   NAVBAR DROPDOWNS
+════════════════════════════ */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-drop-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  transition: transform 0.25s ease;
+  opacity: 0.7;
+}
+
+.nav-dropdown.active .dropdown-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: var(--forest);
+  border: 1px solid rgba(250, 250, 247, 0.12);
+  border-radius: var(--rad);
+  padding: 8px 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 200;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: var(--forest);
+  border-left: 1px solid rgba(250, 250, 247, 0.12);
+  border-top: 1px solid rgba(250, 250, 247, 0.12);
+}
+
+.nav-dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 9px 18px;
+  font-family: var(--fh);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(250, 250, 247, 0.75);
+  white-space: nowrap;
+  transition: all 0.18s ease;
+  border-left: 2px solid transparent;
+}
+
+.dropdown-menu a:hover {
+  color: var(--mint);
+  background: rgba(56, 198, 152, 0.08);
+  border-left-color: var(--mint);
+}
+
+/* Search Icon in Navbar */
+.nav-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: rgba(250, 250, 247, 0.6);
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 16px;
+  transition: color 0.18s ease;
+}
+
+.nav-search:hover {
+  color: var(--mint);
+}
+
+/* ════════════════════════════
+   STOCK PICKS HERO
+════════════════════════════ */
+.stock-picks-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stock-picks-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.1);
+}
+
+.stock-picks-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 41, 26, 0.88) 0%,
+    rgba(10, 41, 26, 0.72) 50%,
+    rgba(10, 41, 26, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+.stock-picks-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.stock-picks-hero-content h1 {
+  font-family: var(--fh);
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 900;
+  color: var(--snow);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.stock-picks-hero-content .author {
+  font-family: var(--fh);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ════════════════════════════
+   ANNOUNCEMENT BANNER (Stock Picks variant)
+════════════════════════════ */
+.stock-picks-banner {
+  border-top: 2px solid var(--mint);
+  border-bottom: 2px solid var(--mint);
+}
+
+.stock-picks-banner .banner-text a {
+  color: var(--forest);
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.stock-picks-banner .banner-text a:hover {
+  color: #0d4a2e;
+}
+
+/* ════════════════════════════
+   STOCK PICKS CONTENT
+════════════════════════════ */
+.stock-picks-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 64px 80px 80px;
+  background: var(--snow);
+}
+
+.sp-announcement {
+  font-size: 1.3rem;
+  line-height: 1.75;
+  margin-bottom: 40px;
+  color: var(--charcoal);
+  font-family: var(--fb);
+}
+
+.sp-announcement strong {
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.sp-announcement a {
+  color: var(--mint);
+  text-decoration: underline;
+  font-weight: 700;
+  transition: color 0.18s ease;
+}
+
+.sp-announcement a:hover {
+  color: var(--forest);
+}
+
+.sp-contact {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 48px;
+  line-height: 1.8;
+  font-family: var(--fb);
+}
+
+.sp-contact a {
+  color: var(--mint);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+.sp-contact a:hover {
+  color: var(--forest);
+}
+
+.sp-welcome {
+  margin-bottom: 48px;
+}
+
+.sp-welcome p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  font-family: var(--fb);
+  font-weight: 400;
+}
+
+.sp-disclaimer {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+  padding-top: 36px;
+  border-top: 1.5px solid var(--border);
+  font-family: var(--fb);
+}
+
+.sp-disclaimer em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.sp-disclaimer a {
+  color: var(--mint);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+.sp-disclaimer a:hover {
+  color: var(--forest);
+}
+
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
+@media (max-width: 768px) {
+  .stock-picks-hero {
+    height: 340px;
+  }
+
+  .stock-picks-content {
+    padding: 48px 32px 64px;
+  }
+
+  .sp-announcement {
+    font-size: 1.15rem;
+  }
+
+  .nav-search {
+    margin-left: auto;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Mobile dropdowns inside hamburger menu */
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-drop-trigger {
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: hidden;
+    display: none;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid rgba(250, 250, 247, 0.08);
+    background: rgba(0, 0, 0, 0.15);
+    width: 100%;
+    text-align: center;
+    min-width: unset;
+    border-radius: 0;
+    padding: 4px 0;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .nav-dropdown.active .dropdown-menu {
+    visibility: visible;
+    display: block;
+    transform: none;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-left: none;
+  }
+
+  .dropdown-menu a:hover {
+    border-left: none;
+  }
+
+  .stock-picks-hero {
+    height: 280px;
+  }
+
+  .stock-picks-hero-content h1 {
+    font-size: 2.6rem;
+  }
+
+  .stock-picks-content {
+    padding: 36px 20px 48px;
+  }
+
+  .sp-announcement {
+    font-size: 1.05rem;
+  }
+
+  .sp-welcome p {
+    font-size: 0.95rem;
+  }
+
+  .nav-search {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .stock-picks-hero {
+    height: 240px;
+  }
+
+  .stock-picks-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .stock-picks-hero-content .author {
+    font-size: 0.85rem;
+  }
+
+  .stock-picks-content {
+    padding: 28px 16px 40px;
+  }
+}
