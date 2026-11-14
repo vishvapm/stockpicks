@@ -1,5 +1,9 @@
 /* Finance Flow — main.js */
 
+// Vercel Analytics
+import { inject } from '@vercel/analytics';
+inject();
+
 // Stock table filter
 document.querySelectorAll('.filter-bar .fb').forEach(btn => {
   btn.addEventListener('click', () => {
